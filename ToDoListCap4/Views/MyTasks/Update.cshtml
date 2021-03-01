@@ -1,0 +1,23 @@
+﻿@model ToDos
+
+@{
+    // format date for diplaying in html
+    string objectDate = @Model.DueDate.ToString("yyyy-MM-dd");
+}
+
+<form method="post">
+    <label>Description: </label>
+    <input type="text" name="ItemDesciption" value="@Model.ItemDesciption" readonly />
+    <br />
+    <label>Due Date: </label>
+    <input type="date" name="DueDate" value="@objectDate" readonly />
+    <br />
+    <label>Completed?: @Model.IsComplete</label>
+    <p>Do you wish to complete this entry?</p>
+    <input type="submit" value="Complete" />
+</form>
+<a asp-action="Index" asp-controller="MyTasks">
+    <button>
+     No
+    </button>
+</a>

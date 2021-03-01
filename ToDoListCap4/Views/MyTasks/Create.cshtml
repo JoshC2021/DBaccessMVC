@@ -1,0 +1,20 @@
+﻿@{
+    DateTime now = @DateTime.Now;
+}
+
+<h2>Create a new Task</h2>
+<form method="post">
+    <label>Task Description</label>
+    <input type="text" name="ItemDesciption" maxlength="30" />
+    <br />
+    <label>Is Complete</label>
+    <br />
+    <label>True:</label><input type="radio" name="IsComplete" value="true" required />
+    <label>False:</label><input type="radio" name="IsComplete" value="false" required />
+    <br />
+    <label>Due Date</label>
+    <input type="date" name="DueDate" max="@now" />
+    <br />
+    <input type="submit" value="Create new task" />
+</form>
+
